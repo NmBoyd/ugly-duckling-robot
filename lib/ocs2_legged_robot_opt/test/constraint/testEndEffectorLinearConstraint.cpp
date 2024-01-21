@@ -41,7 +41,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "ocs2_legged_robot_opt/common/ModelSettings.h"
 #include "ocs2_legged_robot_opt/constraint/EndEffectorLinearConstraint.h"
-#include "ocs2_legged_robot_opt/test/AnymalFactoryFunctions.h"
+#include "ocs2_legged_robot_opt/test/DucklingFactoryFunctions.h"
 
 #include <gtest/gtest.h>
 

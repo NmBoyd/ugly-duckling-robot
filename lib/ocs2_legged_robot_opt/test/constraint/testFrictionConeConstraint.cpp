@@ -34,7 +34,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ocs2_core/misc/LinearAlgebra.h>
 
 #include "ocs2_legged_robot_opt/constraint/FrictionConeConstraint.h"
-#include "ocs2_legged_robot_opt/test/AnymalFactoryFunctions.h"
+#include "ocs2_legged_robot_opt/test/DucklingFactoryFunctions.h"
 
 using namespace ocs2;
 using namespace legged_robot;

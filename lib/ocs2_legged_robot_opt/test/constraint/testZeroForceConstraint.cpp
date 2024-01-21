@@ -35,7 +35,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "ocs2_legged_robot_opt/common/ModelSettings.h"
 #include "ocs2_legged_robot_opt/common/Types.h"
 #include "ocs2_legged_robot_opt/constraint/ZeroForceConstraint.h"
-#include "ocs2_legged_robot_opt/test/AnymalFactoryFunctions.h"
+#include "ocs2_legged_robot_opt/test/DucklingFactoryFunctions.h"
 
 using namespace ocs2;
 using namespace legged_robot;

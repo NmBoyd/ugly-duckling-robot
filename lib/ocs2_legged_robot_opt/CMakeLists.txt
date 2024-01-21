@@ -212,7 +212,7 @@ install(DIRECTORY launch config rviz
 ## Testing ##
 #############
 catkin_add_gtest(${PROJECT_NAME}_test
-  test/AnymalFactoryFunctions.cpp
+  test/DucklingFactoryFunctions.cpp
   test/constraint/testEndEffectorLinearConstraint.cpp
   test/constraint/testFrictionConeConstraint.cpp
   test/constraint/testZeroForceConstraint.cpp

@@ -31,15 +31,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <ros/package.h>
 
-#include "ocs2_legged_robot_opt/test/AnymalFactoryFunctions.h"
+#include "ocs2_legged_robot_opt/test/DucklingFactoryFunctions.h"
 
 #include <ocs2_centroidal_model/FactoryFunctions.h>
 #include <ocs2_legged_robot_opt/common/ModelSettings.h>
 
 namespace {
-const std::string ROBOT_URDF_PATH = ros::package::getPath("anymal_c_simple_description") + "/urdf/" + "anymal.urdf";
-const std::string ROBOT_TASK_FILE_PATH = ros::package::getPath("ocs2_legged_robot_opt") + "/config/mpc/" + "task.info";
-const std::string ROBOT_COMMAND_PATH = ros::package::getPath("ocs2_legged_robot_opt") + "/config/command/" + "targetTrajectories.info";
+const std::string ROBOT_URDF_PATH = ros::package::getPath("duckling_description") + "/urdf/" + "anymal.urdf";
+const std::string ROBOT_TASK_FILE_PATH = ros::package::getPath("duckling_core") + "/config/mpc/" + "task.info";
+const std::string ROBOT_COMMAND_PATH = ros::package::getPath("duckling_core") + "/config/command/" + "targetTrajectories.info";
 }  // unnamed namespace
 
 namespace ocs2 {
