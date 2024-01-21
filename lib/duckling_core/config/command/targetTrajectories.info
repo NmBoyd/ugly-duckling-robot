@@ -14,7 +14,7 @@ defaultJointState
    (6,0)   -1.595           ; LeftFootPitch
    (7,0)   0.043            ; RightHipRoll
    (8,0)   0.0033           ; RightHipYaw
-   (9,0)  0.4591           ; RightHipPitch
+   (9,0)   0.4591           ; RightHipPitch
    (10,0)  -1.2207          ; RightKneePitch
    (11,0)  -0.0367          ; RightShinPitch
    (12,0)  1.5192           ; RightTarsusPitch
