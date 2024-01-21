@@ -8,13 +8,13 @@
     <arg name="rviz"               default="true" />
     <arg name="multiplot"          default="false"/>
     <arg name="description_name"   default="robot_description"/>
-    <arg name="description_file"   default="$(find cassie_description)/urdf/cassie_v4.urdf"/>
+    <arg name="description_file"   default="$(find duckling_description)/urdf/duckling.urdf"/>
     
     <group if="$(arg rviz)">
       <include file="$(find ocs2_legged_robot_opt)/launch/visualize.launch"/>
     </group>
 
-    <include file="$(find cassie_description)/launch/load.launch" pass_all_args="true">
+    <include file="$(find duckling_description)/launch/load.launch" pass_all_args="true">
         <arg name="description_name"   value="$(arg description_name)"/>
         <arg name="description_file"   value="$(arg description_file)"/>
     </include>
@@ -23,7 +23,6 @@
       <include file="$(find ocs2_legged_robot_opt)/launch/multiplot.launch"/>
     </group>
 
-    <!-- Breaks -->
     <node pkg="ocs2_legged_robot_opt" type="legged_robot_mpc" name="legged_robot_mpc"
           output="screen" args="$(arg robot_name) $(arg config_name) $(arg target_command) $(arg description_name)" launch-prefix=""/> 
 
@@ -35,6 +34,4 @@
 
     <node pkg="ocs2_legged_robot_opt" type="legged_robot_gait_command" name="legged_robot_gait_command"
           output="screen" args="$(arg robot_name) $(arg gait_command)" launch-prefix="gnome-terminal --"/>
-
-    <!-- <node pkg="ocs2_legged_robot_opt" type="draw_polygons" name="drwa_polygons" output="screen"/> -->
 </launch>
