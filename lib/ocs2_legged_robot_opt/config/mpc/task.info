@@ -1,0 +1,248 @@
+centroidalModelType             1      // 0: FullCentroidalDynamics, 1: Single Rigid Body Dynamics
+
+legged_robot_interface
+{
+  display                               false  // show the loaded parameters
+  useAnalyticalGradientsDynamics        false
+  useAnalyticalGradientsConstraints     false
+}
+
+model_settings
+{
+  positionErrorGain             1.0
+  phaseTransitionStanceTime     0.4
+
+  verboseCppAd                  true
+  recompileLibrariesCppAd       true
+  modelFolderCppAd              /tmp/ocs2
+}
+
+swing_trajectory_config
+{
+  liftOffVelocity               0.2
+  touchDownVelocity            -0.4
+  swingHeight                   0.1
+  touchdownAfterHorizon         0.2
+  swingTimeScale                0.15
+}
+
+initialModeSchedule
+{
+  modeSequence
+  {
+    [0]  STANCE
+    [1]  STANCE
+  }
+  eventTimes
+  {
+    [0]  0.5
+  }
+}
+
+defaultModeSequenceTemplate
+{
+  modeSequence
+  {
+    [0]  STANCE
+  }
+  switchingTimes
+  {
+    [0]  0.0
+    [1]  1.0
+  }
+}
+
+; DDP settings
+ddp
+{
+  algorithm                       SLQ
+
+  nThreads                        6
+  threadPriority                  50
+
+  maxNumIterations                10
+  minRelCost                      1e-1
+  constraintTolerance             5e-3
+
+  displayInfo                     false
+  displayShortSummary             false
+  checkNumericalStability         true
+  debugPrintRollout               false
+  debugCaching                    false
+
+  AbsTolODE                       1e-5
+  RelTolODE                       1e-3
+  maxNumStepsPerSecond            10000
+  timeStep                        1e-2
+  backwardPassIntegratorType      ODE45
+  constraintPenaltyInitialValue   20.0
+  constraintPenaltyIncreaseRate   2.0
+  inequalityConstraintMu          0.1
+  inequalityConstraintDelta       5.0
+
+  preComputeRiccatiTerms          true
+  useNominalTimeForBackwardPass   true
+
+  useFeedbackPolicy               false
+
+  strategy                        LINE_SEARCH
+  lineSearch
+  {
+    minStepLength                 1e-4
+    maxStepLength                 1.0
+    hessianCorrectionStrategy     DIAGONAL_SHIFT
+    hessianCorrectionMultiple     1e-5
+  }
+}
+
+; Rollout settings
+rollout
+{
+  AbsTolODE                       1e-5
+  RelTolODE                       1e-3
+  timeStep                        1e-2
+  maxNumStepsPerSecond            10000
+  checkNumericalStability         true
+}
+
+mpc
+{
+  timeHorizon                     1.0
+  numPartitions                   2
+
+  runtimeMaxNumIterations         1
+  initMaxNumIterations            10
+
+  runtimeMinStepLength            1e-2
+  runtimeMaxStepLength            1.0
+  initMinStepLength               1e-2
+  initMaxStepLength               1.0
+
+  debugPrint                      false
+  coldStart                       false
+
+  useParallelRiccatiSolver        true ; use disjoint riccati solver in multi-thread case
+
+  solutionTimeWindow              -1  ; [s]
+
+  mpcDesiredFrequency             50  ; [Hz]
+  mrtDesiredFrequency             400 ; [Hz]
+}
+
+initialState
+{
+   ;; Normalized Centroidal Momentum: [linear, angular] ;;
+   (0,0)  0.0     ; vcom_x
+   (1,0)  0.0     ; vcom_y
+   (2,0)  0.0     ; vcom_z
+   (3,0)  0.0     ; L_x / robotMass
+   (4,0)  0.0     ; L_y / robotMass
+   (5,0)  0.0     ; L_z / robotMass
+
+   ;; Base Pose: [position, orientation] ;;
+   (6,0)  0.0     ; p_base_x
+   (7,0)  0.0     ; p_base_y
+   (8,0)  0.98    ; p_base_z
+   (9,0)  0.0     ; theta_base_z
+   (10,0) 0.0     ; theta_base_y
+   (11,0) 0.0     ; theta_base_x
+
+   ;; Leg Joint Positions: [LF, RF] ;;
+   (12,0)   -0.043                ; LeftHipRoll
+   (13,0)   -0.0033               ; LeftHipYaw
+   (14,0)   0.4591                ; LeftHipPitch
+   (15,0)   -1.2207               ; LeftKneePitch
+   (16,0)   -0.0367               ; LeftShinPitch
+   (17,0)   1.5192                ; LeftTarsusPitch
+   (18,0)   -1.595                ; LeftFootPitch
+   (19,0)   0.043                 ; RightHipRoll
+   (20,0)   0.0033                ; RightHipYaw
+   (21,0)   0.4591                ; RightHipPitch
+   (22,0)   -1.2207               ; RightKneePitch
+   (23,0)   -0.0367               ; RightShinPitch
+   (24,0)   1.5192                ; RightTarsusPitch
+   (25,0)   -1.595                ; RightFootPitch
+}
+
+; standard state weight matrix
+Q
+{
+  scaling 1e+0
+
+  ;; Normalized Centroidal Momentum: [linear, angular] ;;
+  (0,0)   15.0     ; vcom_x
+  (1,1)   15.0     ; vcom_y
+  (2,2)   30.0     ; vcom_z
+  (3,3)   5.0      ; L_x / robotMass
+  (4,4)   10.0     ; L_y / robotMass
+  (5,5)   10.0     ; L_z / robotMass
+
+  ;; Base Pose: [position, orientation] ;;
+  (6,6)   500.0    ; p_base_x
+  (7,7)   500.0    ; p_base_y
+  (8,8)   500.0    ; p_base_z
+  (9,9)   100.0    ; theta_base_z
+  (10,10) 200.0    ; theta_base_y
+  (11,11) 200.0    ; theta_base_x
+
+  ;; Leg Joint Positions: [LF, RF] ;;
+  (12,12)   100.0   ; LeftHipRoll
+  (13,13)   100.0   ; LeftHipYaw
+  (14,14)   100.0   ; LeftHipPitch
+  (15,15)   100.0   ; LeftKneePitch
+  (16,16)   100.0    ; LeftShinPitch
+  (17,17)   100.0    ; LeftTarsusPitch
+  (18,18)   100.0   ; LeftFootPitch
+  (19,19)   100.0   ; RightHipRoll
+  (20,20)   100.0   ; RightHipYaw
+  (21,21)   100.0   ; RightHipPitch
+  (22,22)   100.0   ; RightKneePitch
+  (23,23)   100.0    ; RightShinPitch
+  (24,24)   100.0    ; RightTarsusPitch
+  (25,25)   100.0   ; RightFootPitch
+}
+
+; control weight matrix
+R
+{
+  scaling 1e-3
+
+  ;; Feet Contact Forces: [LF, RF] ;;
+  (0,0)   1.0       ; left_foot_toe
+  (1,1)   1.0       ; left_foot_toe
+  (2,2)   1.0       ; left_foot_toe
+  (3,3)   1.0       ; left_foot_heel
+  (4,4)   1.0       ; left_foot_heel
+  (5,5)   1.0       ; left_foot_heel
+  (6,6)   1.0       ; right_foot_toe
+  (7,7)   1.0       ; right_foot_toe
+  (8,8)   1.0       ; right_foot_toe
+  (9,9)   1.0       ; right_foot_heel
+  (10,10)   1.0     ; right_foot_heel
+  (11,11)   1.0     ; right_foot_heel
+
+  ;; Leg Joint Velocities: [LF, RF] ;;
+  (12,12)   5000.0   ; LeftHipRoll
+  (13,13)   5000.0   ; LeftHipYaw
+  (14,14)   5000.0   ; LeftHipPitch
+  (15,15)   5000.0   ; LeftKneePitch
+  (16,16)   0.0      ; LeftShinPitch
+  (17,17)   0.0      ; LeftTarsusPitch
+  (18,18)   5000.0   ; LeftFootPitch
+  (19,19)   5000.0   ; RightHipRoll
+  (20,20)   5000.0   ; RightHipYaw
+  (21,21)   5000.0   ; RightHipPitch
+  (22,22)   5000.0   ; RightKneePitch
+  (23,23)   0.0      ; RightShinPitch
+  (24,24)   0.0      ; RightTarsusPitch
+  (25,25)   5000.0   ; RightFootPitch
+}
+
+frictionConeSoftConstraint
+{
+  frictionCoefficient    0.7
+
+  ; relaxed log barrier parameters
+  mu                     1e-2
+  delta                  1e-3
+}

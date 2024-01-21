@@ -1,0 +1,33 @@
+list
+{
+  [0] stance
+  [1] walking
+}
+
+stance
+ {
+   modeSequence
+   {
+     [0]     STANCE
+   }
+   switchingTimes
+   {
+     [0]     0.0
+     [1]     1.0
+   }
+}
+
+walking
+ {
+   modeSequence
+   {
+     [0]     LF
+     [1]     RF
+   }
+   switchingTimes
+   {
+     [0]     0.0
+     [1]     0.35
+     [2]     0.70
+   }
+}
