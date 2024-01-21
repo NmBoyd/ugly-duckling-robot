@@ -26,7 +26,5 @@
   <depend>ocs2_ros_interfaces</depend>
 
   <depend>pinocchio</depend>
-  <depend>anymal_c_simple_description</depend>
-  <depend>cassie_description</depend>
 
 </package>

@@ -7,7 +7,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CATKIN_PACKAGE_DEPENDENCIES
   roslib
   cmake_modules
-  cassie_description
   ocs2_core
   ocs2_mpc
   ocs2_robotic_tools
@@ -211,15 +210,16 @@ install(DIRECTORY launch config rviz
 #############
 ## Testing ##
 #############
-catkin_add_gtest(${PROJECT_NAME}_test
-  test/DucklingFactoryFunctions.cpp
-  test/constraint/testEndEffectorLinearConstraint.cpp
-  test/constraint/testFrictionConeConstraint.cpp
-  test/constraint/testZeroForceConstraint.cpp
-)
-target_link_libraries(${PROJECT_NAME}_test
-  gtest_main
-  ${PROJECT_NAME}
-  ${catkin_LIBRARIES}
-  ${Boost_LIBRARIES}
-)
+# # TODO(nathan): Add tests back for the robot. But make it duckling specific...
+# catkin_add_gtest(${PROJECT_NAME}_test
+#   test/DucklingFactoryFunctions.cpp
+#   test/constraint/testEndEffectorLinearConstraint.cpp
+#   test/constraint/testFrictionConeConstraint.cpp
+#   test/constraint/testZeroForceConstraint.cpp
+# )
+# target_link_libraries(${PROJECT_NAME}_test
+#   gtest_main
+#   ${PROJECT_NAME}
+#   ${catkin_LIBRARIES}
+#   ${Boost_LIBRARIES}
+# )
