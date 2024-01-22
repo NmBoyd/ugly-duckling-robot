@@ -5,59 +5,59 @@ sw_bd0_controller:
     publish_rate: 50
 
   # Position Controllers --------------------------------------
-  Revolute 16_position_controller:
+  neck_pitch_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 16
+    joint: neck_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 17_position_controller:
+  head_pitch_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 17
+    joint: head_pitch
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 18_position_controller:
+  head_yaw_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 18
+    joint: head_yaw
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 19_position_controller:
+  head_roll_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 19
+    joint: head_roll
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 20_position_controller:
+  r_hip_ie_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 20
+    joint: r_hip_ie
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 21_position_controller:
+  l_hip_ie_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 21
+    joint: l_hip_ie
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 22_position_controller:
+  r_hip_aa_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 22
+    joint: r_hip_aa
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 23_position_controller:
+  l_hip_aa_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 23
+    joint: l_hip_aa
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 24_position_controller:
+  r_hip_fe_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 24
+    joint: r_hip_fe
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 25_position_controller:
+  l_hip_fe_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 25
+    joint: l_hip_fe
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 26_position_controller:
+  r_knee_fe_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 26
+    joint: r_knee_fe
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 27_position_controller:
+  l_knee_fe_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 27
+    joint: l_knee_fe
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 28_position_controller:
+  r_foot_fe_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 28
+    joint: r_foot_fe
     pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute 29_position_controller:
+  l_foot_fe_position_controller:
     type: effort_controllers/JointPositionController
-    joint: Revolute 29
+    joint: l_foot_fe
     pid: {p: 100.0, i: 0.01, d: 10.0}

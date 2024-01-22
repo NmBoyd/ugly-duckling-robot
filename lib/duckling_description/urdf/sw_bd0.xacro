@@ -319,7 +319,7 @@
   </collision>
 </link>
 
-<joint name="neck_pitch_base" type="continuous">
+<joint name="neck_pitch" type="continuous">
   <origin xyz="-0.0013 0.023577 0.394589" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="Neck-Base_1_1_1"/>
