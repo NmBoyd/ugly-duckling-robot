@@ -1,0 +1,37 @@
+<launch>
+    <!-- Input Arguments -->
+    <arg name="duckling_namespace" default="duckling_01" />
+    <arg name="publish_joint_states" default="false" />
+    <arg name="rviz" default="true" />
+
+    <!-- Load URDFs -->
+    <param name="duckling_description" textfile="$(find duckling_description)/urdf/sw_bd0.urdf"/>
+
+    <!-- duckling joint state publisher -->
+    <group if = "$(arg publish_joint_states)">
+        <rosparam command="load" file="$(find duckling_description)/config/dependent_joints.yaml" />
+        <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+            <!-- <param name="use_gui" value="true" /> -->
+            <remap from="robot_description" to="duckling_description" />
+            <remap from="joint_states" to="/$(arg duckling_namespace)/joint_states" />
+        </node>
+    </group>
+
+
+    <node name="joint_state_publisher" pkg="duckling_description" type="duckling_turn"/>
+
+
+    <!-- duckling state publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="$(arg duckling_namespace)_state_publisher">
+        <param name="tf_prefix" value="/$(arg duckling_namespace)" />
+        <param name="use_tf_static" type="bool" value="false" />
+        <param name="publish_frequency" type="double" value="100.0" />
+        <remap from="robot_description" to="duckling_description" />
+        <remap from="joint_states" to="/$(arg duckling_namespace)/joint_states" />
+    </node>
+
+		<group if="$(arg rviz)">
+			<node name="rviz" pkg="rviz" type="rviz" args="-d $(find duckling_description)/rviz/duckling.rviz" required="false" />
+		</group>
+    
+</launch>
