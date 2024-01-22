@@ -29,4 +29,4 @@ rsync -a $OCS2_PATH/ocs2_mpcnet/ocs2_mpcnet_core/misc/onnxruntime/cmake/ ~/.loca
 
 cd ~/duckling_ws
 # TODO(nathan): remove segmented_planes_terrain_model after fixing SignedDistanceField 
-catkin config --blacklist ocs2_doc segmented_planes_terrain_model ocs2_quadruped_interface ocs2_quadruped_loopshaping_interface ocs2_anymal_mpc ocs2_anymal_loopshaping_mpc ocs2_raisim ocs2_legged_robot_raisim ocs2_raisim_core ocs2_raisim_ros ocs2_mpcnet ocs2_ballbox_mpcnet ocs2_legged_robot_mpcnet
+catkin config --blacklist ocs2_legged_robot ocs2_doc segmented_planes_terrain_model ocs2_quadruped_interface ocs2_quadruped_loopshaping_interface ocs2_anymal_mpc ocs2_anymal_loopshaping_mpc ocs2_raisim ocs2_legged_robot_raisim ocs2_raisim_core ocs2_raisim_ros ocs2_mpcnet ocs2_ballbot_mpcnet ocs2_legged_robot_mpcnet

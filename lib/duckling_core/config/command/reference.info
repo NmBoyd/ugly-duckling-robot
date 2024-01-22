@@ -5,20 +5,20 @@ comHeight                           0.3
 
 defaultJointState
 {
-   (0,0)    0   ; l_hip_aa
-   (1,0)    0   ; l_hip_ie
-   (2,0)    0   ; l_hip_fe
-   (3,0)    0   ; l_knee_fe
-   (4,0)    0   ; l_foot_fe
-   (5,0)    0   ; r_hip_aa
-   (6,0)    0   ; r_hip_ie
-   (7,0)    0   ; r_hip_fe
-   (8,0)    0   ; r_knee_fe
-   (9,0)    0   ; r_foot_fe
-   (10,0)   0   ; neck_pitch
-   (11,0)   0   ; head_pitch
-   (12,0)   0   ; head_yaw
-   (13,0)   0   ; head_roll
+   (0,0)   0              ; l_hip_aa
+   (1,0)   0              ; l_hip_ie
+   (2,0)   0              ; l_hip_fe
+   (3,0)   0              ; l_knee_fe
+   (4,0)   0              ; l_foot_fe
+   (5,0)   0              ; r_hip_aa
+   (6,0)   0              ; r_hip_ie
+   (7,0)   0              ; r_hip_fe
+   (8,0)   0              ; r_knee_fe
+   (9,0)   0              ; r_foot_fe
+   (10,0)   0              ; neck_pitch
+   (11,0)   0              ; head_pitch
+   (12,0)   0              ; head_yaw
+   (13,0)   0              ; head_roll
 }
 
 initialModeSchedule
