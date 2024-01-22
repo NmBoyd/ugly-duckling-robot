@@ -2,6 +2,7 @@ centroidalModelType             1      // 0: FullCentroidalDynamics, 1: Single R
 
 legged_robot_interface
 {
+  verbose                               false
   display                               false  // show the loaded parameters
   useAnalyticalGradientsDynamics        false
   useAnalyticalGradientsConstraints     false
@@ -24,32 +25,6 @@ swing_trajectory_config
   swingHeight                   0.1
   touchdownAfterHorizon         0.2
   swingTimeScale                0.15
-}
-
-initialModeSchedule
-{
-  modeSequence
-  {
-    [0]  STANCE
-    [1]  STANCE
-  }
-  eventTimes
-  {
-    [0]  0.5
-  }
-}
-
-defaultModeSequenceTemplate
-{
-  modeSequence
-  {
-    [0]  STANCE
-  }
-  switchingTimes
-  {
-    [0]  0.0
-    [1]  1.0
-  }
 }
 
 ; DDP settings
@@ -162,6 +137,7 @@ initialState
    (23,0)   0              ; head_pitch
    (24,0)   0              ; head_yaw
    (25,0)   0              ; head_roll
+}
 
 ; standard state weight matrix
 Q
