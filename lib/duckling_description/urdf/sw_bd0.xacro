@@ -1,0 +1,420 @@
+<?xml version="1.0" ?>
+<robot name="sw_bd0" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find duckling_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find duckling_description)/urdf/sw_bd0.trans" />
+<xacro:include filename="$(find duckling_description)/urdf/sw_bd0.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.00030692869034494455 0.10794443945855599 0.336408641271748" rpy="0 0 0"/>
+    <mass value="58.84948927612512"/>
+    <inertia ixx="0.742119" iyy="0.390167" izz="0.598148" ixy="0.001524" iyz="-0.019101" ixz="-0.001048"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Neck-Base_1_1_1">
+  <inertial>
+    <origin xyz="-0.0037204185899173013 0.022877173720960785 0.05313044025265656" rpy="0 0 0"/>
+    <mass value="1.7744309148890365"/>
+    <inertia ixx="0.003949" iyy="0.003277" izz="0.001342" ixy="-0.000188" iyz="-0.001327" ixz="-0.000416"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0013 -0.023577 -0.394589" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Neck-Base_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0013 -0.023577 -0.394589" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Neck-Base_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Neck-Cable-Guide_1_1_1">
+  <inertial>
+    <origin xyz="0.02567570325608754 0.007067867979778403 0.01272355868039865" rpy="0 0 0"/>
+    <mass value="0.5403874707456671"/>
+    <inertia ixx="0.000118" iyy="0.000203" izz="0.00021" ixy="-0.0" iyz="-1.9e-05" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.025 -0.0886 -0.505469" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Neck-Cable-Guide_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.025 -0.0886 -0.505469" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Neck-Cable-Guide_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Head-Yaw-Mount_1_1_1">
+  <inertial>
+    <origin xyz="-3.900737921020531e-05 0.003677385711655906 0.02242369852722459" rpy="0 0 0"/>
+    <mass value="0.7884788831732902"/>
+    <inertia ixx="0.000545" iyy="0.000245" izz="0.00055" ixy="0.0" iyz="-1e-05" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0007 -0.0883 -0.532569" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Head-Yaw-Mount_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0007 -0.0883 -0.532569" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Head-Yaw-Mount_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Head-Roll-Mount_1_1_1">
+  <inertial>
+    <origin xyz="-0.0005152725386995515 -0.05157951540531315 0.005136350911904786" rpy="0 0 0"/>
+    <mass value="5.0942155694527305"/>
+    <inertia ixx="0.039562" iyy="0.030187" izz="0.063238" ixy="2e-05" iyz="0.001552" ixz="9e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.00065 -0.133848 -0.562209" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Head-Roll-Mount_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.00065 -0.133848 -0.562209" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Head-Roll-Mount_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Hip-Joint-Yaw-Right_1_1_1">
+  <inertial>
+    <origin xyz="-0.0034769226818922236 0.005329819672309374 -0.05718740698283692" rpy="0 0 0"/>
+    <mass value="2.710413234826848"/>
+    <inertia ixx="0.00322" iyy="0.004455" izz="0.001963" ixy="4e-06" iyz="3e-05" ixz="-4.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.046658 -0.113027 -0.350727" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Hip-Joint-Yaw-Right_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.046658 -0.113027 -0.350727" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Hip-Joint-Yaw-Right_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Hip-Joint-Yaw-Left_1_1_1">
+  <inertial>
+    <origin xyz="0.003476916493858888 0.005329817672092077 -0.05718740567578556" rpy="0 0 0"/>
+    <mass value="2.7104129345182724"/>
+    <inertia ixx="0.00322" iyy="0.004455" izz="0.001963" ixy="-4e-06" iyz="3e-05" ixz="4.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.046658 -0.113027 -0.350727" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Hip-Joint-Yaw-Left_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.046658 -0.113027 -0.350727" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Hip-Joint-Yaw-Left_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Hip-Joint-Roll-Right_1_1_1">
+  <inertial>
+    <origin xyz="-0.037585464304248785 -0.008742267643225526 0.0005073004766671385" rpy="0 0 0"/>
+    <mass value="1.2525665319575874"/>
+    <inertia ixx="0.000491" iyy="0.001604" izz="0.001478" ixy="8.9e-05" iyz="2e-06" ixz="4e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.049408 -0.107827 -0.287377" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Hip-Joint-Roll-Right_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.049408 -0.107827 -0.287377" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Hip-Joint-Roll-Right_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Hip-Joint-Roll-Left_1_1_1">
+  <inertial>
+    <origin xyz="0.03758545882228228 -0.008742267643225513 0.0005073004766672495" rpy="0 0 0"/>
+    <mass value="1.2525665319575872"/>
+    <inertia ixx="0.000491" iyy="0.001604" izz="0.001478" ixy="-8.9e-05" iyz="2e-06" ixz="-4e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.049408 -0.107827 -0.287377" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Hip-Joint-Roll-Left_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.049408 -0.107827 -0.287377" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Hip-Joint-Roll-Left_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Upper-Leg-Right_1_1_1">
+  <inertial>
+    <origin xyz="-0.01713314425618992 0.033955639219308775 -0.03420329511266973" rpy="0 0 0"/>
+    <mass value="9.797710752447612"/>
+    <inertia ixx="0.045664" iyy="0.023224" izz="0.02779" ixy="-0.000209" iyz="0.013684" ixz="-2.8e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.129009 -0.10285 -0.288126" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Upper-Leg-Right_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.129009 -0.10285 -0.288126" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Upper-Leg-Right_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Upper-Leg-Left_1_1_1">
+  <inertial>
+    <origin xyz="0.017133138774223372 0.033955639219308775 -0.034203295112669785" rpy="0 0 0"/>
+    <mass value="9.79771075244762"/>
+    <inertia ixx="0.045664" iyy="0.023224" izz="0.02779" ixy="0.000209" iyz="0.013684" ixz="2.8e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.129009 -0.10285 -0.288126" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Upper-Leg-Left_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.129009 -0.10285 -0.288126" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Upper-Leg-Left_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Lower-Leg-Right_1_1_1">
+  <inertial>
+    <origin xyz="0.022337859585607883 -0.021387299875317956 -0.08585627297390336" rpy="0 0 0"/>
+    <mass value="3.5336559525083544"/>
+    <inertia ixx="0.013524" iyy="0.010593" izz="0.00365" ixy="0.000238" iyz="-0.003425" ixz="0.000634"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.129009 -0.182156 -0.210418" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Lower-Leg-Right_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.129009 -0.182156 -0.210418" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Lower-Leg-Right_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Lower-Leg-Left_1_1_1">
+  <inertial>
+    <origin xyz="-0.022337864800614962 -0.02138729956553212 -0.08585627245860046" rpy="0 0 0"/>
+    <mass value="3.533655907847469"/>
+    <inertia ixx="0.013524" iyy="0.010593" izz="0.00365" ixy="-0.000238" iyz="-0.003425" ixz="-0.000634"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.129009 -0.182156 -0.210418" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Lower-Leg-Left_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.129009 -0.182156 -0.210418" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Lower-Leg-Left_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Foot-Right_1_1_1">
+  <inertial>
+    <origin xyz="0.004317818616470584 -0.02253962501094224 -0.05014233472325015" rpy="0 0 0"/>
+    <mass value="2.196651599731845"/>
+    <inertia ixx="0.006073" iyy="0.00203" izz="0.005022" ixy="0.000115" iyz="-0.000449" ixz="0.000495"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.117018 -0.137149 -0.080276" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Foot-Right_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.117018 -0.137149 -0.080276" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Foot-Right_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Foot-Left_1_1_1">
+  <inertial>
+    <origin xyz="-0.004317824098437145 -0.02253962501094224 -0.05014233472325014" rpy="0 0 0"/>
+    <mass value="2.196651599731846"/>
+    <inertia ixx="0.006073" iyy="0.00203" izz="0.005022" ixy="-0.000115" iyz="-0.000449" ixz="-0.000495"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.117018 -0.137149 -0.080276" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Foot-Left_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.117018 -0.137149 -0.080276" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duckling_description/meshes/Foot-Left_1_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="neck_pitch_base" type="continuous">
+  <origin xyz="-0.0013 0.023577 0.394589" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Neck-Base_1_1_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="head_pitch" type="continuous">
+  <origin xyz="-0.0237 0.065023 0.11088" rpy="0 0 0"/>
+  <parent link="Neck-Base_1_1_1"/>
+  <child link="Neck-Cable-Guide_1_1_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="head_yaw" type="continuous">
+  <origin xyz="0.0257 -0.0003 0.0271" rpy="0 0 0"/>
+  <parent link="Neck-Cable-Guide_1_1_1"/>
+  <child link="Head-Yaw-Mount_1_1_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+<joint name="head_roll" type="continuous">
+  <origin xyz="-5e-05 0.045548 0.02964" rpy="0 0 0"/>
+  <parent link="Head-Yaw-Mount_1_1_1"/>
+  <child link="Head-Roll-Mount_1_1_1"/>
+  <axis xyz="-0.0 1.0 0.000175"/>
+</joint>
+
+<joint name="r_hip_ie" type="continuous">
+  <origin xyz="-0.046658 0.113027 0.350727" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Hip-Joint-Yaw-Right_1_1_1"/>
+  <axis xyz="0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="l_hip_ie" type="continuous">
+  <origin xyz="0.046658 0.113027 0.350727" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Hip-Joint-Yaw-Left_1_1_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="r_hip_aa" type="continuous">
+  <origin xyz="-0.00275 -0.0052 -0.06335" rpy="0 0 0"/>
+  <parent link="Hip-Joint-Yaw-Right_1_1_1"/>
+  <child link="Hip-Joint-Roll-Right_1_1_1"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="l_hip_aa" type="continuous">
+  <origin xyz="0.00275 -0.0052 -0.06335" rpy="0 0 0"/>
+  <parent link="Hip-Joint-Yaw-Left_1_1_1"/>
+  <child link="Hip-Joint-Roll-Left_1_1_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="r_hip_fe" type="continuous">
+  <origin xyz="-0.079601 -0.004977 0.000749" rpy="0 0 0"/>
+  <parent link="Hip-Joint-Roll-Right_1_1_1"/>
+  <child link="Upper-Leg-Right_1_1_1"/>
+  <axis xyz="-1.0 -0.0 0.0"/>
+</joint>
+
+<joint name="l_hip_fe" type="continuous">
+  <origin xyz="0.079601 -0.004977 0.000749" rpy="0 0 0"/>
+  <parent link="Hip-Joint-Roll-Left_1_1_1"/>
+  <child link="Upper-Leg-Left_1_1_1"/>
+  <axis xyz="1.0 -0.0 0.0"/>
+</joint>
+
+<joint name="r_knee_fe" type="continuous">
+  <origin xyz="0.0 0.079306 -0.077708" rpy="0 0 0"/>
+  <parent link="Upper-Leg-Right_1_1_1"/>
+  <child link="Lower-Leg-Right_1_1_1"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="l_knee_fe" type="continuous">
+  <origin xyz="0.0 0.079306 -0.077708" rpy="0 0 0"/>
+  <parent link="Upper-Leg-Left_1_1_1"/>
+  <child link="Lower-Leg-Left_1_1_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="r_foot_fe" type="continuous">
+  <origin xyz="0.011991 -0.045007 -0.130142" rpy="0 0 0"/>
+  <parent link="Lower-Leg-Right_1_1_1"/>
+  <child link="Foot-Right_1_1_1"/>
+  <axis xyz="-1.0 0.0 -0.0"/>
+</joint>
+
+<joint name="l_foot_fe" type="continuous">
+  <origin xyz="-0.011991 -0.045007 -0.130142" rpy="0 0 0"/>
+  <parent link="Lower-Leg-Left_1_1_1"/>
+  <child link="Foot-Left_1_1_1"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+</joint>
+
+</robot>
