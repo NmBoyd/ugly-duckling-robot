@@ -541,86 +541,100 @@
       </geometry>
     </collision>
   </link>
-  <joint name="neck_pitch" type="continuous">
+  <joint name="neck_pitch" type="revolute">
     <origin rpy="0 0 0" xyz="-0.0013 0.023577 0.394589"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="base_link"/>
     <child link="Neck-Base_1_1_1"/>
     <axis xyz="-1.0 0.0 0.0"/>
   </joint>
-  <joint name="head_pitch" type="continuous">
+  <joint name="head_pitch" type="revolute">
     <origin rpy="0 0 0" xyz="-0.0237 0.065023 0.11088"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="Neck-Base_1_1_1"/>
     <child link="Neck-Cable-Guide_1_1_1"/>
     <axis xyz="1.0 0.0 0.0"/>
   </joint>
-  <joint name="head_yaw" type="continuous">
+  <joint name="head_yaw" type="revolute">
     <origin rpy="0 0 0" xyz="0.0257 -0.0003 0.0271"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="Neck-Cable-Guide_1_1_1"/>
     <child link="Head-Yaw-Mount_1_1_1"/>
     <axis xyz="-0.0 0.0 1.0"/>
   </joint>
-  <joint name="head_roll" type="continuous">
+  <joint name="head_roll" type="revolute">
     <origin rpy="0 0 0" xyz="-5e-05 0.045548 0.02964"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="Head-Yaw-Mount_1_1_1"/>
     <child link="Head-Roll-Mount_1_1_1"/>
     <axis xyz="-0.0 1.0 0.000175"/>
   </joint>
-  <joint name="r_hip_ie" type="continuous">
+  <joint name="r_hip_ie" type="revolute">
     <origin rpy="0 0 0" xyz="-0.046658 0.113027 0.350727"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="base_link"/>
     <child link="Hip-Joint-Yaw-Right_1_1_1"/>
     <axis xyz="0.0 -0.0 -1.0"/>
   </joint>
-  <joint name="l_hip_ie" type="continuous">
+  <joint name="l_hip_ie" type="revolute">
     <origin rpy="0 0 0" xyz="0.046658 0.113027 0.350727"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="base_link"/>
     <child link="Hip-Joint-Yaw-Left_1_1_1"/>
     <axis xyz="-0.0 -0.0 -1.0"/>
   </joint>
-  <joint name="r_hip_aa" type="continuous">
+  <joint name="r_hip_aa" type="revolute">
     <origin rpy="0 0 0" xyz="-0.00275 -0.0052 -0.06335"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="Hip-Joint-Yaw-Right_1_1_1"/>
     <child link="Hip-Joint-Roll-Right_1_1_1"/>
     <axis xyz="0.0 -1.0 -0.0"/>
   </joint>
-  <joint name="l_hip_aa" type="continuous">
+  <joint name="l_hip_aa" type="revolute">
     <origin rpy="0 0 0" xyz="0.00275 -0.0052 -0.06335"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="Hip-Joint-Yaw-Left_1_1_1"/>
     <child link="Hip-Joint-Roll-Left_1_1_1"/>
     <axis xyz="-0.0 -1.0 -0.0"/>
   </joint>
-  <joint name="r_hip_fe" type="continuous">
+  <joint name="r_hip_fe" type="revolute">
     <origin rpy="0 0 0" xyz="-0.079601 -0.004977 0.000749"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="Hip-Joint-Roll-Right_1_1_1"/>
     <child link="Upper-Leg-Right_1_1_1"/>
     <axis xyz="-1.0 -0.0 0.0"/>
   </joint>
-  <joint name="l_hip_fe" type="continuous">
+  <joint name="l_hip_fe" type="revolute">
     <origin rpy="0 0 0" xyz="0.079601 -0.004977 0.000749"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="Hip-Joint-Roll-Left_1_1_1"/>
     <child link="Upper-Leg-Left_1_1_1"/>
     <axis xyz="1.0 -0.0 0.0"/>
   </joint>
-  <joint name="r_knee_fe" type="continuous">
+  <joint name="r_knee_fe" type="revolute">
     <origin rpy="0 0 0" xyz="0.0 0.079306 -0.077708"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="Upper-Leg-Right_1_1_1"/>
     <child link="Lower-Leg-Right_1_1_1"/>
     <axis xyz="1.0 -0.0 -0.0"/>
   </joint>
-  <joint name="l_knee_fe" type="continuous">
+  <joint name="l_knee_fe" type="revolute">
     <origin rpy="0 0 0" xyz="0.0 0.079306 -0.077708"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="Upper-Leg-Left_1_1_1"/>
     <child link="Lower-Leg-Left_1_1_1"/>
     <axis xyz="-1.0 -0.0 -0.0"/>
   </joint>
-  <joint name="r_foot_fe" type="continuous">
+  <joint name="r_foot_fe" type="revolute">
     <origin rpy="0 0 0" xyz="0.011991 -0.045007 -0.130142"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="Lower-Leg-Right_1_1_1"/>
     <child link="Foot-Right_1_1_1"/>
     <axis xyz="-1.0 0.0 -0.0"/>
   </joint>
-  <joint name="l_foot_fe" type="continuous">
+  <joint name="l_foot_fe" type="revolute">
     <origin rpy="0 0 0" xyz="-0.011991 -0.045007 -0.130142"/>
+    <limit velocity="1000" lower="-3.14" upper="3.14" effort="1000"/>
     <parent link="Lower-Leg-Left_1_1_1"/>
     <child link="Foot-Left_1_1_1"/>
     <axis xyz="1.0 0.0 -0.0"/>
